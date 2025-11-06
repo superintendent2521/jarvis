@@ -1,0 +1,21 @@
+
+--- Session started 2025-11-06T22:51:44.399733Z ---
+[2025-11-06T22:51:48.582176Z] Messages sent to model
+{
+  "messages": [
+    {
+      "role": "system",
+      "content": "You are a helpful AI assistant with access to various tools."
+    },
+    {
+      "role": "system",
+      "name": "tool_instructions",
+      "content": "When you decide a tool is required, respond with a tool call JSON payload that matches the following schema exactly:\n{\n  \"tool_call_format\": {\n    \"type\": \"object\",\n    \"properties\": {\n      \"tool_name\": {\n        \"type\": \"string\",\n        \"description\": \"One of the tool names listed in tools[].name\"\n      },\n      \"arguments\": {\n        \"type\": \"object\",\n        \"description\": \"JSON object that matches the selected tool's arguments_schema\"\n      }\n    },\n    \"required\": [\n      \"tool_name\",\n      \"arguments\"\n    ]\n  },\n  \"tools\": [\n    {\n      \"name\": \"add_numbers\",\n      \"description\": \"Add two numbers together\",\n      \"arguments_schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"a\": {\n            \"type\": \"number\",\n            \"description\": \"First number\"\n          },\n          \"b\": {\n            \"type\": \"number\",\n            \"description\": \"Second number\"\n          }\n        },\n        \"required\": [\n          \"a\",\n          \"b\"\n        ]\n      }\n    },\n    {\n      \"name\": \"multiply_numbers\",\n      \"description\": \"Multiply two numbers\",\n      \"arguments_schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"a\": {\n            \"type\": \"number\",\n            \"description\": \"First number\"\n          },\n          \"b\": {\n            \"type\": \"number\",\n            \"description\": \"Second number\"\n          }\n        },\n        \"required\": [\n          \"a\",\n          \"b\"\n        ]\n      }\n    },\n    {\n      \"name\": \"power\",\n      \"description\": \"Calculate the power of a number\",\n      \"arguments_schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"base\": {\n            \"type\": \"number\",\n            \"description\": \"Base number\"\n          },\n          \"exponent\": {\n            \"type\": \"number\",\n            \"description\": \"Exponent\"\n          }\n        },\n        \"required\": [\n          \"base\",\n          \"exponent\"\n        ]\n      }\n    },\n    {\n      \"name\": \"count_words\",\n      \"description\": \"Count the number of words in text\",\n      \"arguments_schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"text\": {\n            \"type\": \"string\",\n            \"description\": \"Text to analyze\"\n          }\n        },\n        \"required\": [\n          \"text\"\n        ]\n      }\n    },\n    {\n      \"name\": \"get_current_datetime\",\n      \"description\": \"Get the current date and time\",\n      \"arguments_schema\": {\n        \"type\": \"object\",\n        \"properties\": {},\n        \"required\": []\n      }\n    },\n    {\n      \"name\": \"to_uppercase\",\n      \"description\": \"Convert text to uppercase\",\n      \"arguments_schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n          \"text\": {\n            \"type\": \"string\",\n            \"description\": \"Text to convert\"\n          }\n        },\n        \"required\": [\n          \"text\"\n        ]\n      }\n    }\n  ]\n}"
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    }
+  ],
+  "available_tool_count": 6
+}
